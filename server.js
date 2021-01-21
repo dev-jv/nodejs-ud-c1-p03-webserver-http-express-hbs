@@ -4,6 +4,16 @@ const app = express();
 
 app.use(express.static(__dirname + '/public'));
 
+// Express HBS engine
+app.set('view engine', 'hbs');
+
+app.get('/', (req, res) => {
+   res.render('home', {
+       name: 'Pure evil',
+       year: new Date().getFullYear()
+    });
+});
+
 // app.get('/', (req, res) => {
 //     // res.send('Although')
 //     let salida = {
@@ -17,5 +27,5 @@ app.use(express.static(__dirname + '/public'));
 // });
 
 app.listen(5000, () => {
-    console.log('Escuchandopeticiones en el puerto 5000')
+    console.log('Escuchando peticiones en el puerto 5000')
 });
