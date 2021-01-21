@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dev-jv/nodejs-ud-c1-p03-webserver-http-express-hbs/issues"
   },
-  "homepage": "https://github.com/dev-jv/nodejs-ud-c1-p03-webserver-http-express-hbs#readme"
+  "homepage": "https://github.com/dev-jv/nodejs-ud-c1-p03-webserver-http-express-hbs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
