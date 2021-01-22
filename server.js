@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const hbs = require('hbs');
+require('./hbs/helpers');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -9,17 +10,27 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
+// // Helpers
+// hbs.registerHelper('getYear', () => {
+//     return new Date().getFullYear();
+// });
+//
+// hbs.registerHelper('capitalizar', (txt) => {
+//    let wrds = txt.split(' ');
+//    wrds.forEach((ter, idx) => {
+//        wrds[idx] = ter.charAt(0).toUpperCase() + ter.slice(1).toLowerCase();
+//    });
+//    return wrds.join(' ');
+// });
+
 app.get('/', (req, res) => {
    res.render('home', {
        name: 'Pure evil',
-       year: new Date().getFullYear()
     });
 });
 
 app.get('/about', (req, res) => {
-   res.render('about', {
-       year: new Date().getFullYear()
-   });
+   res.render('about');
 });
 
 // app.get('/', (req, res) => {
